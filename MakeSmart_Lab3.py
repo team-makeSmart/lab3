@@ -4,6 +4,13 @@ def getPic():
     """ prompts a user to pick a file to be converted to a jython picture """
     
     return makePicture(pickAFile())
+    
+def halfRed():
+    """ Reduces red in a given image by 1/2 """
+    
+    lessRed(.5)
+    
+# Problem 1
 
 def lessRed(percentage):
     """ Reduces the red in an image by a given percentage 
@@ -25,12 +32,6 @@ def lessRed(percentage):
     repaint(pic)
     
     
-
-def halfRed():
-    """ Reduces red in a given image by 1/2 """
-    
-    lessRed(.5)
-    
 def noBlue():
     """ Removes all blue values from a given image """
     
@@ -39,5 +40,37 @@ def noBlue():
     for p in pixels:
         b = getBlue(p)
         setBlue(p, b * 0)
+    repaint(pic)
+    
+# Problem 6
+
+def BnW():
+    """ Converts an image to gray-scale """
+    
+    pic = getPic()
+    pixels = getPixels(pic)
+    for p in pixels:
+        r = getRed(p)
+        g = getGreen(p)
+        b = getBlue(p)
+        luminance = (r + g + b) / 3
+        setRed(p, luminance)
+        setGreen(p, luminance)
+        setBlue(p, luminance)
+    repaint(pic)
+    
+def betterBnW():
+    """ Converts an image to gray-scale """
+    
+    pic = getPic()
+    pixels = getPixels(pic)
+    for p in pixels:
+        r = getRed(p)
+        g = getGreen(p)
+        b = getBlue(p)
+        luminance = r*0.299 + g*0.587 + b*0.114
+        setRed(p, luminance)
+        setGreen(p, luminance)
+        setBlue(p, luminance)
     repaint(pic)
     
