@@ -6,7 +6,7 @@ def getPic():
     return makePicture(pickAFile())
     
 def halfRed():
-    """ Reduces red in a given image by 1/2 """q
+    """ Reduces red in a given image by 1/2 """
     
     lessRed(.5)
     
