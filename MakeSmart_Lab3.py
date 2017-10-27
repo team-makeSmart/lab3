@@ -10,6 +10,16 @@ def halfRed():
     
     lessRed(.5)
     
+def noBlue():
+    """ Removes all blue values from a given image """
+    
+    pic = getPic()
+    pixels = getPixels(pic)
+    for p in pixels:
+        b = getBlue(p)
+        setBlue(p, b * 0)
+    repaint(pic)
+    
 # Problem 1
 
 def lessRed(percentage):
@@ -21,7 +31,7 @@ def lessRed(percentage):
     """
     
     if not (percentage > 0 and percentage < 1):
-        print("lessRed Error - Expected float between 0 and 1. \"%s\" given" % percentage)
+        print("lessRed Error - Expected float between 0 and 1. \"%s\" given." % percentage)
         return
     
     pic = getPic()
@@ -31,15 +41,23 @@ def lessRed(percentage):
         setRed(p, r * percentage)
     repaint(pic)
     
-    
-def noBlue():
-    """ Removes all blue values from a given image """
-    
+# Problem 5
+
+def makeNegative():
+    """ Makes a negative copy of an image """
+
     pic = getPic()
     pixels = getPixels(pic)
     for p in pixels:
+        r = getRed(p)
+        g = getGreen(p)
         b = getBlue(p)
-        setBlue(p, b * 0)
+        r = 255 - r
+        g = 255 - g
+        b = 255 - b
+        setRed(p, r)
+        setGreen(p, g)
+        setBlue(p, b)
     repaint(pic)
     
 # Problem 6
