@@ -6,7 +6,7 @@ def getPic():
     return makePicture(pickAFile())
     
 def halfRed():
-    """ Reduces red in a given image by 1/2 """
+    """ Reduces red in a given image by 1/2 """q
     
     lessRed(.5)
     
@@ -40,6 +40,13 @@ def lessRed(percentage):
         r = getRed(p)
         setRed(p, r * percentage)
     repaint(pic)
+    
+# TODO Problem 2
+# (make sure red value doesn't exceed 255)
+
+# TODO Problem 3
+
+# TODO Probelm 4
     
 # Problem 5
 
