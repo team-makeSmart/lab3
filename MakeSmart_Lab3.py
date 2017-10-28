@@ -41,8 +41,57 @@ def lessRed(percentage):
         setRed(p, r * percentage)
     repaint(pic)
     
-# TODO Problem 2
-# (make sure red value doesn't exceed 255)
+#Problem 2  version 1
+
+def get_pic():
+  """chooses a file"""
+  return makePicture(pickAFile())
+  
+ 
+def  moreRed(value):
+  """increases the red in each pixel of an image""" 
+  """checks if the value is within the RGB range"""
+  """if not, values lower than 0 will be forced""" 
+  """to 0 and higher than 255 forced to 255"""
+  pic = get_pic()
+  pixels = getPixels(pic)
+  for p in pixels:
+     
+    r = getRed(p)
+    redness = r*value
+       
+    if redness > 255:
+      value = 255
+    elif redness < 0:
+      value = 0
+    setRed(p, redness)
+    
+  repaint(pic)
+  
+moreRed(12)
+#-----------------------------------------------------
+# Problem 2, second version
+
+def get_pic():
+  """chooses a file"""
+  return makePicture(pickAFile())
+  
+ 
+def  moreRed(value):
+  """increases the red in each pixel of an image""" 
+  """sets the setColorWrapAround() to false to prevent out of range RGB values"""
+  pic = get_pic()
+  pixels = getPixels(pic)
+  for p in pixels:
+    setColorWrapAround(0)
+    r = getRed(p)
+    setRed(p, r*value)
+  repaint(pic)
+  
+moreRed(7)
+#-----------------------------------
+
+
 
 # TODO Problem 3
 
