@@ -91,11 +91,46 @@ def  moreRed(value):
 moreRed(7)
 #-----------------------------------
 
+# Problem 3
+def get_pic():
+  """opens a file"""
+  return makePicture(pickAFile())
 
+def roseColoredGlasses():
+  """sets the G and B values to the percentage""" 
+  """required for a pink color while R stays at 255"""
+  pic = get_pic()
+  pixels = getPixels(pic)
+  for p in pixels:
+    r = getRed(p)
+    g = getGreen(p)
+    b = getBlue(p)     
+    setGreen(p, g * .41)
+    setBlue(p, b * .75)  
+    setRed(p, r)   
+  repaint(pic)
+  
 
-# TODO Problem 3
+roseColoredGlasses()
 
-# TODO Probelm 4
+# Probelm 4
+
+def get_pic():
+  """opens a file"""
+  return makePicture(pickAFile())
+
+def lightenUp():
+  """lightens each pixel in a picture"""
+  pic = get_pic()
+  pixels = getPixels(pic)
+  for p in pixels:
+    oldColor = getColor(p)
+    newColor = makeLighter(oldColor)
+    setColor(p, newColor)
+  repaint(pic)
+  
+  
+lightenUp()
     
 # Problem 5
 
