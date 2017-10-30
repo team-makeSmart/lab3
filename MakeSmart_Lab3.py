@@ -63,7 +63,6 @@ def  moreRed(value):
     
   repaint(pic)
   
-moreRed(12)
 #-----------------------------------------------------
 # Problem 2, second version
 
@@ -78,7 +77,6 @@ def  moreRed(value):
     setRed(p, r*value)
   repaint(pic)
   
-moreRed(7)
 #-----------------------------------
 
 # Problem 3
@@ -98,7 +96,6 @@ def roseColoredGlasses():
   repaint(pic)
   
 
-roseColoredGlasses()
 
 # Probelm 4
 
@@ -113,7 +110,6 @@ def lightenUp():
   repaint(pic)
   
   
-lightenUp()
     
 # Problem 5
 
