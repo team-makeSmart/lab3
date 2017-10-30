@@ -20,6 +20,7 @@ def noBlue():
         setBlue(p, b * 0)
     repaint(pic)
     
+    
 # Problem 1
 
 def lessRed(percentage):
@@ -40,31 +41,9 @@ def lessRed(percentage):
         r = getRed(p)
         setRed(p, r * percentage)
     repaint(pic)
-    
-#Problem 2  version 1
- 
-def  moreRed(value):
-  """increases the red in each pixel of an image""" 
-  """checks if the value is within the RGB range"""
-  """if not, values lower than 0 will be forced""" 
-  """to 0 and higher than 255 forced to 255"""
-  pic = getPic()
-  pixels = getPixels(pic)
-  for p in pixels:
-     
-    r = getRed(p)
-    redness = r*value
-       
-    if redness > 255:
-      value = 255
-    elif redness < 0:
-      value = 0
-    setRed(p, redness)
-    
-  repaint(pic)
   
-#-----------------------------------------------------
-# Problem 2, second version
+  
+# Problem 2
 
 def  moreRed(value):
   """increases the red in each pixel of an image""" 
@@ -77,7 +56,6 @@ def  moreRed(value):
     setRed(p, r*value)
   repaint(pic)
   
-#-----------------------------------
 
 # Problem 3
 
@@ -95,7 +73,6 @@ def roseColoredGlasses():
     setRed(p, r)   
   repaint(pic)
   
-
 
 # Probelm 4
 
@@ -129,6 +106,7 @@ def makeNegative():
         setGreen(p, g)
         setBlue(p, b)
     repaint(pic)
+    
     
 # Problem 6
 
