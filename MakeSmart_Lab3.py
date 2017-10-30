@@ -20,6 +20,7 @@ def noBlue():
         setBlue(p, b * 0)
     repaint(pic)
     
+    
 # Problem 1
 
 def lessRed(percentage):
@@ -40,47 +41,14 @@ def lessRed(percentage):
         r = getRed(p)
         setRed(p, r * percentage)
     repaint(pic)
-    
-#Problem 2  version 1
+  
+  
+# Problem 2
 
-def get_pic():
-  """chooses a file"""
-  return makePicture(pickAFile())
-  
- 
-def  moreRed(value):
-  """increases the red in each pixel of an image""" 
-  """checks if the value is within the RGB range"""
-  """if not, values lower than 0 will be forced""" 
-  """to 0 and higher than 255 forced to 255"""
-  pic = get_pic()
-  pixels = getPixels(pic)
-  for p in pixels:
-     
-    r = getRed(p)
-    redness = r*value
-       
-    if redness > 255:
-      value = 255
-    elif redness < 0:
-      value = 0
-    setRed(p, redness)
-    
-  repaint(pic)
-  
-moreRed(12)
-#-----------------------------------------------------
-# Problem 2, second version
-
-def get_pic():
-  """chooses a file"""
-  return makePicture(pickAFile())
-  
- 
 def  moreRed(value):
   """increases the red in each pixel of an image""" 
   """sets the setColorWrapAround() to false to prevent out of range RGB values"""
-  pic = get_pic()
+  pic = getPic()
   pixels = getPixels(pic)
   for p in pixels:
     setColorWrapAround(0)
@@ -88,18 +56,13 @@ def  moreRed(value):
     setRed(p, r*value)
   repaint(pic)
   
-moreRed(7)
-#-----------------------------------
 
 # Problem 3
-def get_pic():
-  """opens a file"""
-  return makePicture(pickAFile())
 
 def roseColoredGlasses():
   """sets the G and B values to the percentage""" 
   """required for a pink color while R stays at 255"""
-  pic = get_pic()
+  pic = getPic()
   pixels = getPixels(pic)
   for p in pixels:
     r = getRed(p)
@@ -111,17 +74,11 @@ def roseColoredGlasses():
   repaint(pic)
   
 
-roseColoredGlasses()
-
 # Probelm 4
-
-def get_pic():
-  """opens a file"""
-  return makePicture(pickAFile())
 
 def lightenUp():
   """lightens each pixel in a picture"""
-  pic = get_pic()
+  pic = getPic()
   pixels = getPixels(pic)
   for p in pixels:
     oldColor = getColor(p)
@@ -130,7 +87,6 @@ def lightenUp():
   repaint(pic)
   
   
-lightenUp()
     
 # Problem 5
 
@@ -150,6 +106,7 @@ def makeNegative():
         setGreen(p, g)
         setBlue(p, b)
     repaint(pic)
+    
     
 # Problem 6
 
