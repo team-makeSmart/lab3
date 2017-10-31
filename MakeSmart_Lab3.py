@@ -48,7 +48,12 @@ def  moreRed(percent):
   pixels = getPixels(pic)
   for p in pixels:
     r = getRed(p)
-    setRed(p,r+(r*percent*.01)) 
+    value = r+(r*percent*.01)
+    if value < 0 :
+      value = 0
+    elif value > 255 :
+      value = 255
+    setRed(p,value) 
   repaint(pic)
 
 # Problem 3
