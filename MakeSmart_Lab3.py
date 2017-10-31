@@ -8,7 +8,7 @@ def getPic():
 def halfRed():
     """ Reduces red in a given image by 1/2 """
     
-    lessRed(.5)
+    lessRed(50)
     
 def noBlue():
     """ Removes all blue values from a given image """
