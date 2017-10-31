@@ -20,58 +20,52 @@ def noBlue():
         setBlue(p,0)
     repaint(pic)
     
-    
+  
 # Problem 1
 
 def lessRed(percentage):
-    """ Reduces the red in an image by a given percentage 
+    """Reduces the red in an image by a given percentage""" 
+    """Args: percentage (int): Amount of red that will be reduced in the image"""
     
-    Args:
-        percentage (float): Amount of red that will be reduced in the image
-    
-    """
-    
-    if not (percentage > 0 and percentage < 1):
-        print("lessRed Error - Expected float between 0 and 1. \"%s\" given." % percentage)
+    """If statement is for exception handling for out of range"""
+    if (percentage < 0 or percentage > 100):
+        print("lessRed Error - Expected value is from 0 to 100. Value given was %s" % percentage)
         return
-    
     pic = getPic()
     pixels = getPixels(pic)
     for p in pixels:
         r = getRed(p)
-        setRed(p, r * percentage)
+        setRed(p, r - ( r * percentage * .01) )
     repaint(pic)
   
   
 # Problem 2
 
-def  moreRed(value):
-  """increases the red in each pixel of an image""" 
-  """sets the setColorWrapAround() to false to prevent out of range RGB values"""
+def  moreRed(percent):
+#Increase the red in each pixel"""
+#Args: percentage to increase redness""" 
   pic = getPic()
   pixels = getPixels(pic)
   for p in pixels:
-    setColorWrapAround(0)
     r = getRed(p)
-    setRed(p, r*value)
+    setRed(p,r+(r*percent*.01)) 
   repaint(pic)
-  
 
 # Problem 3
 
 def roseColoredGlasses():
-  """sets the G and B values to the percentage""" 
-  """required for a pink color while R stays at 255"""
+  """ Adjusts relative value of each RGB to create a pink hue in image""" 
   pic = getPic()
   pixels = getPixels(pic)
   for p in pixels:
     r = getRed(p)
-    g = getGreen(p)
-    b = getBlue(p)     
-    setGreen(p, g * .41)
-    setBlue(p, b * .75)  
-    setRed(p, r)   
+    g = getGreen(p)   
+    b = getBlue(p)
+    setRed(p,(r + g + b)*.25)
+    setGreen(p,(r + g + b)*.12)
+    setBlue(p,(r + g + b)*.18)  
   repaint(pic)
+  
   
 
 # Probelm 4
