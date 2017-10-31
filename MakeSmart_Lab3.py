@@ -16,8 +16,8 @@ def noBlue():
     pic = getPic()
     pixels = getPixels(pic)
     for p in pixels:
-        b = getBlue(p)
-        setBlue(p, b * 0)
+        getBlue(p)
+        setBlue(p,0)
     repaint(pic)
     
     
